@@ -1,0 +1,337 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --text-color: #FFFFFF;
+    --icon-color: #ACACBE;
+    --icon-hover-bg: #5b5e71;
+    --placeholder-color: #dcdcdc;
+    --outgoing-chat-bg: #343541;
+    --incoming-chat-bg: #444654;
+    --outgoing-chat-border: #343541;
+    --incoming-chat-border: #444654;
+}
+
+.light-mode {
+    --text-color: #343541;
+    --icon-color: #a9a9bc;
+    --icon-hover-bg: #f1f1f3;
+    --placeholder-color: #6c6c6c;
+    --outgoing-chat-bg: #FFFFFF;
+    --incoming-chat-bg: #F7F7F8;
+    --outgoing-chat-border: #FFFFFF;
+    --incoming-chat-border: #D9D9E3;
+}
+
+body {
+    background: var(--outgoing-chat-bg);
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #202123;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 120px; /* Increase the size */
+    height: 120px; /* Increase the size */
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile h2 {
+    font-size: 18px;
+    font-weight: bold; /* Make the username bold */
+    text-align: center;
+}
+
+.health-parameters {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.health-parameters h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #a8a8a8;
+}
+
+/* Sidebar buttons */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sidebar-buttons button {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #343541;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar-buttons button:hover {
+    background-color: #444654;
+}
+
+/* Chats container styling */
+.chat-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: var(--incoming-chat-bg);
+}
+
+.chat {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.chat.outgoing .chat-details {
+    background-color: var(--outgoing-chat-bg);
+    border: 1px solid var(--outgoing-chat-border);
+    align-self: flex-end;
+    border-radius: 10px 10px 0 10px;
+}
+
+.chat.incoming .chat-details {
+    background-color: var(--incoming-chat-bg);
+    border: 1px solid var(--incoming-chat-border);
+    align-self: flex-start;
+    border-radius: 10px 10px 10px 0;
+}
+
+.chat-details {
+    max-width: 80%;
+    padding: 10px;
+}
+
+.chat-details p {
+    color: var(--text-color);
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* Profile Button */
+.profile-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--icon-color);
+}
+
+.profile-button:hover {
+    color: #FFFFFF;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: var(--outgoing-chat-bg);
+    color: var(--text-color);
+    border: 1px solid var(--incoming-chat-border);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.profile-dropdown.show {
+    display: block;
+}
+
+.profile-dropdown p {
+    margin-bottom: 10px;
+}
+
+.profile-dropdown span {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Typing container */
+.typing-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--outgoing-chat-bg);
+    border-top: 1px solid var(--incoming-chat-border);
+    padding: 10px;
+}
+
+.typing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typing-textarea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+}
+
+.typing-textarea textarea {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--incoming-chat-border);
+    background-color: var(--incoming-chat-bg);
+    color: var(--text-color);
+    resize: none;
+    outline: none;
+}
+
+.typing-textarea textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+.typing-textarea .material-symbols-rounded {
+    cursor: pointer;
+    color: var(--icon-color);
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.typing-textarea .material-symbols-rounded:hover {
+    background-color: var(--icon-hover-bg);
+    border-radius: 50%;
+}
+
+#upload-btn {
+    font-size: 24px;
+    color: var(--icon-color);
+    cursor: pointer;
+}
+
+#upload-btn:hover {
+    color: #FFFFFF;
+}
+/* Add styles for the calendar popup */
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--outgoing-chat-bg);
+    color: var(--text-color);
+    border: 1px solid var(--incoming-chat-border);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Add styles for the flatpickr input */
+#appointment-date {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--incoming-chat-border);
+    background-color: var(--incoming-chat-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+}
+
+/* Override flatpickr default styles */
+.flatpickr-calendar {
+    background-color: var(--outgoing-chat-bg);
+    color: var(--text-color);
+}
+
+/* Add styles for flatpickr buttons */
+.flatpickr-prev-month,
+.flatpickr-next-month,
+.flatpickr-monthDropdown-months,
+.flatpickr-current-month,
+.flatpickr-yearDropdown-year {
+    color: var(--icon-color);
+}
+
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover,
+.flatpickr-monthDropdown-months:hover,
+.flatpickr-current-month:hover,
+.flatpickr-yearDropdown-year:hover {
+    background-color: var(--icon-hover-bg);
+}
+
+.flatpickr-day,
+.flatpickr-weekday {
+    color: var(--text-color);
+}
+
+.flatpickr-day.today {
+    background-color: var(--incoming-chat-bg);
+    color: var(--text-color);
+}
+
+.flatpickr-day.selected {
+    background-color: var(--icon-hover-bg);
+    color: var(--text-color);
+}
+/* Your existing CSS code */
+
+/* Add styles for the calendar popup */
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--outgoing-chat-bg);
+    color: var(--text-color);
+    border: 1px solid var(--incoming-chat-border);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Add styles for the flatpickr input */
+#appointment-date {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--incoming-chat-border);
+    background-color: var(--incoming-chat-bg);
+    color: var(--text-color);
+    font-size: 16px;
+    outline: none;
+}
+

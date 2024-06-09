@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Smart Health Chatbot Registration</title>
+    <link rel="stylesheet" href="static/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="registration-container">
+        <form id="registration-form">
+            <h2>Register</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="bp">Blood Pressure (BP)</label>
+                <input type="text" id="bp" name="bp" required>
+            </div>
+            <div class="form-group">
+                <label for="heart-rate">Heart Rate (bpm)</label>
+                <input type="text" id="heart-rate" name="heartRate" required>
+            </div>
+            <div class="form-group">
+                <label for="sugar-level">Sugar Level (mg/dL)</label>
+                <input type="text" id="sugar-level" name="sugarLevel" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="static/registration.js" defer></script>
+</body>
+</html>

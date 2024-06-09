@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Smart Health Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="https://skateparkoftampa.com/spot/headshots/4322.jpg" alt="Profile Picture">
+                <h2 id="user-name">John Doe</h2>
+            </div>
+            <div class="health-parameters">
+                <h3>Health Parameters</h3>
+                <p id="user-bp">BP: 120/80 mmHg</p>
+                <p id="user-heart-rate">Heart Rate: 72 bpm</p>
+                <p id="user-sugar-level">Sugar Level: 90 mg/dL</p>
+            </div>
+            <div class="sidebar-buttons">
+                <button onclick="openDirectChat()">Direct Chat with Dr.</button>
+                <button id="book-appointment-btn">Book an appointment</button>
+            </div>
+        </aside>
+        <div class="chat-container"></div>
+    </div>
+
+    <!-- Profile Button -->
+    <div class="profile-button" onclick="toggleProfileDropdown()">
+        <span class="material-symbols-rounded">account_circle</span>
+    </div>
+
+    <!-- Profile Dropdown -->
+    <div id="profile-dropdown" class="profile-dropdown">
+        <p id="dropdown-username">John Doe</p>
+        <span id="theme-btn" class="material-symbols-rounded" onclick="toggleDarkMode()">light_mode</span>
+        <span id="delete-btn" class="material-symbols-rounded" onclick="deleteChats()">delete</span>
+    </div>
+
+    <!-- Typing container -->
+    <div class="typing-container">
+        <div class="typing-content">
+            <div class="typing-textarea">
+                <textarea id="chat-input" spellcheck="false" placeholder="Enter symptoms here, separated by commas" required></textarea>
+                <span id="send-btn" class="material-symbols-rounded">send</span>
+                <input type="file" id="image-upload" accept="image/*" style="display: none;" />
+                <label for="image-upload" class="material-symbols-rounded" id="upload-btn">upload</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Popup -->
+    <div id="calendar-popup" class="calendar-popup">
+        <input type="text" id="appointment-date" placeholder="Select Date and Time">
+    </div>
+</body>
+</html>
